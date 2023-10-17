@@ -40,18 +40,21 @@ Undetermined
 
    가로, 세로 벽 및 판정선 <br>
    Horizontal, vertical walls and judgment line 
- ![image](https://github.com/PQ777/new-Rhythm/assets/102477933/ec8bc010-bb54-4248-b50d-8190dbd3daea)
+ ![1](https://github.com/PQ777/new-Rhythm/assets/102477933/02b7fadd-6c48-4ec9-a7c5-d581393b1688)
+
 
  
 
   노트 랜덤 출력
   Note random Output
-  ![image](https://github.com/PQ777/new-Rhythm/assets/102477933/a1229032-6a36-437f-b000-f24ed13d545b)
+![2](https://github.com/PQ777/new-Rhythm/assets/102477933/ca8865c5-3150-4b04-82c0-ecdc58e7058c)
+
 
 
   
   노트 맞춤 효과 및 Hit, Miss 확인
   Check note effects and Hit, Miss
-  ![image](https://github.com/PQ777/new-Rhythm/assets/102477933/f32cc333-47fd-40de-b2bf-f65d9a20c9aa)
+![3](https://github.com/PQ777/new-Rhythm/assets/102477933/225b8e5a-dee4-4fa9-bc60-99890f19d51b)
+
 
   
