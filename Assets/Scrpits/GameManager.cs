@@ -55,12 +55,14 @@ public class GameManager : MonoBehaviour
 
     public void GoodHit()
     {
-
+        Debug.Log("Good");
+        hitAudioSource.Play();
     }
 
     public void PerfectHit()
     {
-
+        Debug.Log("Perfect");
+        hitAudioSource.Play();
     }
 
     public void NoteMissed()
