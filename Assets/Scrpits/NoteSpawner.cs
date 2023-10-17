@@ -10,6 +10,7 @@ public class NoteSpawner : MonoBehaviour
     public float BPM = 120f;            // BPM
     public float beatPerNote = 1.0f;    // 한 노트당 박자 수 (1박자 2박자 4박자)
     public bool startPlaying = false;
+    public float spawnOffset = 1.0f;
 
     private float beatInterval;         // 한 비트 간격
     private float timer = 0;
@@ -43,6 +44,7 @@ public class NoteSpawner : MonoBehaviour
                 if (beatCount % beatPerNote == 0)
                 {
                     SpawnNote();
+                   
                 }
                 timer = 0;
             }
@@ -56,5 +58,13 @@ public class NoteSpawner : MonoBehaviour
         Vector3 spawnPosition = new Vector3(randomXPosition, transform.position.y, transform.position.z);
 
         GameObject newNote = Instantiate(notePrefabs, spawnPosition, Quaternion.identity);
+
+        float randomXposition2 = Random.Range(0, 3);
+        if(randomXposition2 % 2 == 0)
+        {
+            Vector3 spawnPosition2 = spawnPosition + new Vector3(spawnOffset, 0, 0);
+            Instantiate(notePrefabs, spawnPosition2, Quaternion.identity);
+        }
+
     }
 }

@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
         //audioSource = GetComponent<AudioSource>();
         //hitAudioSource = GetComponent<AudioSource>();
 
-        Note note = FindObjectOfType<Note>();
+       
     }
 
     // Update is called once per frame
@@ -53,10 +53,20 @@ public class GameManager : MonoBehaviour
         
     }
 
+    public void GoodHit()
+    {
+
+    }
+
+    public void PerfectHit()
+    {
+
+    }
+
     public void NoteMissed()
     {
         Debug.Log("Missed");
-        missAudioSource.Play();
+        //missAudioSource.Play();
     }
 
 

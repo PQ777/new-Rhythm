@@ -22,15 +22,13 @@ public class Note : MonoBehaviour
     {
         transform.Translate(Vector3.down * speed * Time.deltaTime);
 
-        if(transform.position.y < -4.2f)
-        {
-            GameManager.instance.NoteMissed();
-             
+ 
             if (transform.position.y < -5.6f)
             {
+                GameManager.instance.NoteMissed();
                 Destroy(gameObject);
             }
-        }
+        
 
 
         if(Input.GetKeyDown(keyToPress))
