@@ -45,14 +45,14 @@ Undetermined
 
  
 
-  노트 랜덤 출력
+  노트 랜덤 출력<br>
   Note random Output
 ![2](https://github.com/PQ777/new-Rhythm/assets/102477933/ca8865c5-3150-4b04-82c0-ecdc58e7058c)
 
 
 
   
-  노트 맞춤 효과 및 Hit, Miss 확인
+  노트 맞춤 효과 및 Hit, Miss 확인<br>
   Check note effects and Hit, Miss
 ![3](https://github.com/PQ777/new-Rhythm/assets/102477933/225b8e5a-dee4-4fa9-bc60-99890f19d51b)
 
