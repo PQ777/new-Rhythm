@@ -35,14 +35,8 @@ public class Note : MonoBehaviour
         {
             if(canBePressed)
             {
-                if(transform.position.y > -3.1f)
-                {
-                    GameManager.instance.NoteHit();
-                    Instantiate(sparkEffect, transform.position, Quaternion.identity);
-                    Destroy(gameObject);
-                }
 
-                else if(transform.position.y > -3.5f)
+                if(transform.position.y > -3.5f || transform.position.y < -4.1f)
                 {
                     GameManager.instance.GoodHit();
                     Instantiate(sparkEffect, transform.position, Quaternion.identity);

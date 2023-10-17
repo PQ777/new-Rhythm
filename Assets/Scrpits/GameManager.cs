@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
     public AudioSource hitAudioSource;
     public AudioSource missAudioSource;
 
+
+    public int currentScore;
     public int scorePerNote = 100;
     public Text scoreText;
 
@@ -46,23 +48,34 @@ public class GameManager : MonoBehaviour
         audioSource.Play();
     }
 
-    public void NoteHit()
+    public void NoteHitScreen()
     {
-        Debug.Log("Hit");
-        hitAudioSource.Play();
-        
+        scoreText.text = "Score: " + currentScore;
     }
+
+    //public void NoteHit()
+    //{
+    //    Debug.Log("Hit");
+    //    hitAudioSource.Play();
+        
+    //}
 
     public void GoodHit()
     {
         Debug.Log("Good");
         hitAudioSource.Play();
+
+        currentScore += scorePerNote;
+        NoteHitScreen();
     }
 
     public void PerfectHit()
     {
         Debug.Log("Perfect");
         hitAudioSource.Play();
+
+        currentScore += (scorePerNote * 2);
+        NoteHitScreen();
     }
 
     public void NoteMissed()
