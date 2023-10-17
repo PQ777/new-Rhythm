@@ -25,7 +25,7 @@ public class Note : MonoBehaviour
         if(transform.position.y < -4.2f)
         {
             GameManager.instance.NoteMissed();
-
+             
             if (transform.position.y < -5.6f)
             {
                 Destroy(gameObject);
