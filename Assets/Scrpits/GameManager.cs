@@ -15,8 +15,15 @@ public class GameManager : MonoBehaviour
 
 
     public int currentScore;
+    public int perfectHitNoteSum = 0;
+    public int goodHitNoteSum = 0;
+    public int missNoteSum = 0;
+
     public int scorePerNote = 1;
     public Text scoreText;
+    public Text perfectHitSum;
+    public Text goodHitSum;
+    public Text missSum;
 
     // Start is called before the first frame update
     void Start()
@@ -29,7 +36,7 @@ public class GameManager : MonoBehaviour
         //audioSource = GetComponent<AudioSource>();
         //hitAudioSource = GetComponent<AudioSource>();
 
-       
+        scoreText.text = "0";
     }
 
     // Update is called once per frame
@@ -68,11 +75,6 @@ public class GameManager : MonoBehaviour
         audioSource.Play();
     }
 
-    public void NoteHitScreen()
-    {
-        scoreText.text = "Score: " + currentScore;
-    }
-
     public void MainBackMenu()
     {
         SceneManager.LoadScene("MainMenu");
@@ -91,7 +93,7 @@ public class GameManager : MonoBehaviour
         hitAudioSource.Play();
 
         currentScore += scorePerNote;
-        NoteHitScreen();
+        GoodHitNoteSum();
     }
 
     public void PerfectHit()
@@ -100,7 +102,9 @@ public class GameManager : MonoBehaviour
         hitAudioSource.Play();
 
         currentScore += (scorePerNote * 2);
-        NoteHitScreen();
+        PerfectHitNoteSum();
+
+
     }
 
     public void NoteMissed()
@@ -109,6 +113,27 @@ public class GameManager : MonoBehaviour
         //missAudioSource.Play();
     }
 
+    public void HitScoreText()
+    {
+        scoreText.text = "" + currentScore;
+    }
 
+    public void PerfectHitNoteSum()
+    {
+        perfectHitNoteSum += 1;
+        perfectHitSum.text = "" + perfectHitNoteSum;
+    }
+
+    public void GoodHitNoteSum()
+    {
+        goodHitNoteSum += 1;
+        goodHitSum.text = "" + goodHitNoteSum;
+    }
+
+    public void MissNoteSum()
+    {
+        missNoteSum += 1;
+        missSum.text = "" + missNoteSum;
+    }
 
 }

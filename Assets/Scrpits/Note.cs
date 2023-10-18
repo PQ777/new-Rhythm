@@ -8,7 +8,7 @@ public class Note : MonoBehaviour
     public bool canBePressed = false;
     public KeyCode keyToPress;
     public bool canBeMusicPlay = false;
-    public GameObject sparkEffect;
+    public GameObject perfectEffect, goodEffect, missEffect;
 
 
     // Start is called before the first frame update
@@ -22,14 +22,17 @@ public class Note : MonoBehaviour
     {
         transform.Translate(Vector3.down * speed * Time.deltaTime);
 
- 
-            if (transform.position.y < -5.6f)
+        if(!canBePressed)
+        {
+            if (transform.position.y < -4.5f)
             {
                 GameManager.instance.NoteMissed();
+                Instantiate(missEffect, transform.position, Quaternion.identity);
                 Destroy(gameObject);
+                GameManager.instance.MissNoteSum();
             }
-        
-
+        }
+            
 
         if(Input.GetKeyDown(keyToPress))
         {
@@ -39,14 +42,14 @@ public class Note : MonoBehaviour
                 if(transform.position.y > -3.5f || transform.position.y < -4.1f)
                 {
                     GameManager.instance.GoodHit();
-                    Instantiate(sparkEffect, transform.position, Quaternion.identity);
+                    Instantiate(goodEffect, transform.position, Quaternion.identity);
                     Destroy(gameObject);
                 }
 
                 else
                 {
                     GameManager.instance.PerfectHit();
-                    Instantiate(sparkEffect, transform.position, Quaternion.identity);
+                    Instantiate(perfectEffect, transform.position, Quaternion.identity);
                     Destroy(gameObject);
                 }
 
@@ -71,7 +74,6 @@ public class Note : MonoBehaviour
         {
             canBePressed = false;
 
-            
         }
     }
 

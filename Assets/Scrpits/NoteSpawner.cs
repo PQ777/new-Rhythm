@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class NoteSpawner : MonoBehaviour
 {
@@ -21,7 +22,7 @@ public class NoteSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        beatInterval = BPM / 60f;
+        beatInterval = 60f / BPM;
 
     }
 
