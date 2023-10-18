@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
@@ -10,10 +11,11 @@ public class GameManager : MonoBehaviour
     public AudioSource audioSource;
     public AudioSource hitAudioSource;
     public AudioSource missAudioSource;
+    public float timeScaleBeforePause;
 
 
     public int currentScore;
-    public int scorePerNote = 100;
+    public int scorePerNote = 1;
     public Text scoreText;
 
     // Start is called before the first frame update
@@ -33,14 +35,32 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!startNote)
+        if (!startNote)
         {
-            if(Input.anyKeyDown)
+            if (Input.anyKeyDown)
             {
                 startNote.startPlaying = true;
             }
         }
+
     }
+
+    public void PauseGame()
+    {
+        timeScaleBeforePause = Time.timeScale;
+         Time.timeScale = 0;
+        startNote.startPlaying = false;
+   
+    }
+
+    //public void ResumeGame()
+    //{
+
+    //    Time.timeScale = timeScaleBeforePause;
+    //    startNote.startPlaying = true;
+    //    SceneManager.LoadScene("SampleScene");
+
+    //}
 
     public void PlayMusic()
     {
@@ -51,6 +71,11 @@ public class GameManager : MonoBehaviour
     public void NoteHitScreen()
     {
         scoreText.text = "Score: " + currentScore;
+    }
+
+    public void MainBackMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
 
     //public void NoteHit()
@@ -83,6 +108,7 @@ public class GameManager : MonoBehaviour
         Debug.Log("Missed");
         //missAudioSource.Play();
     }
+
 
 
 }

@@ -1324,7 +1324,7 @@ MonoBehaviour:
   hitAudioSource: {fileID: 100152602}
   missAudioSource: {fileID: 1873289725}
   currentScore: 0
-  scorePerNote: 100
+  scorePerNote: 1
   scoreText: {fileID: 729096662}
 --- !u!4 &1883537883
 Transform:
