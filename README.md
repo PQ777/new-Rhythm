@@ -64,4 +64,17 @@ Create 2 notes randomly without overlapping<br>
 
 
 
+메인메뉴 버튼 활성화<br>
+Enable Main Menu Button<br>
+![1](https://github.com/PQ777/new-Rhythm/assets/102477933/403c5d3c-18db-4c1c-8593-efe67778ba47)
+
+
+곡 선택 버튼 활성화 및 뒤로가기 버튼 활성화(애니메이션 추가)<br>
+Enable song selection button and back button (add animation)<br>
+![2](https://github.com/PQ777/new-Rhythm/assets/102477933/0824b44d-4332-4dc0-bf45-082e3752ca06)
+
+
+
+
+
   
