@@ -74,6 +74,11 @@ Enable song selection button and back button (add animation)<br>
 ![2](https://github.com/PQ777/new-Rhythm/assets/102477933/0824b44d-4332-4dc0-bf45-082e3752ca06)
 
 
+300, 50, 미스 판정바 추가(몇개 맞췄는지 포시)
+300, 50, miss bar added
+![1](https://github.com/PQ777/new-Rhythm/assets/102477933/0add3621-9323-4de5-a039-28e069f317a7)
+
+
 
 
 
