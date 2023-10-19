@@ -95,3 +95,9 @@ Modifying Game Play
 ![3](https://github.com/PQ777/new-Rhythm/assets/102477933/a98bd17f-b7c4-4e01-9b25-7408d3bc3296)
 
 
+재시작 및 back 메뉴 키 활성화
+Restart and back menu key activation
+![1](https://github.com/PQ777/new-Rhythm/assets/102477933/f4a7b86c-33c5-4a54-9041-45236b7cff4d)
+
+
+
