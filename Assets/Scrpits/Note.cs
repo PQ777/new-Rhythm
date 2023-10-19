@@ -42,6 +42,7 @@ public class Note : MonoBehaviour
                 if(transform.position.y > -3.5f || transform.position.y < -4.1f)
                 {
                     GameManager.instance.GoodHit();
+                    GameManager.instance.ScoreNoteSum();
                     Instantiate(goodEffect, transform.position, Quaternion.identity);
                     Destroy(gameObject);
                 }
@@ -49,6 +50,7 @@ public class Note : MonoBehaviour
                 else
                 {
                     GameManager.instance.PerfectHit();
+                    GameManager.instance.ScoreNoteSum();
                     Instantiate(perfectEffect, transform.position, Quaternion.identity);
                     Destroy(gameObject);
                 }
@@ -56,8 +58,6 @@ public class Note : MonoBehaviour
                 
             }
         }
-
-
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

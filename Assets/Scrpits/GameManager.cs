@@ -18,12 +18,17 @@ public class GameManager : MonoBehaviour
     public int perfectHitNoteSum = 0;
     public int goodHitNoteSum = 0;
     public int missNoteSum = 0;
+    public int scoreNoteSum = 0;
+    public int maxCombo = 0;
+    public float totalNote = 50;
 
     public int scorePerNote = 1;
     public Text scoreText;
     public Text perfectHitSum;
     public Text goodHitSum;
     public Text missSum;
+    public Text scoreSum;
+    public Text maxComboText;
 
     // Start is called before the first frame update
     void Start()
@@ -59,6 +64,14 @@ public class GameManager : MonoBehaviour
         startNote.startPlaying = false;
    
     }
+
+    //public void resultPanel()
+    //{
+    //    if (perfectHitNoteSum + goodHitNoteSum + missNoteSum < totalNote)
+    //    {
+    //        PauseGame();
+    //    }
+    //}
 
     //public void ResumeGame()
     //{
@@ -110,6 +123,8 @@ public class GameManager : MonoBehaviour
     public void NoteMissed()
     {
         Debug.Log("Missed");
+
+        
         //missAudioSource.Play();
     }
 
@@ -122,18 +137,33 @@ public class GameManager : MonoBehaviour
     {
         perfectHitNoteSum += 1;
         perfectHitSum.text = "" + perfectHitNoteSum;
+        MaxCombo();
     }
 
     public void GoodHitNoteSum()
     {
         goodHitNoteSum += 1;
         goodHitSum.text = "" + goodHitNoteSum;
+        MaxCombo();
     }
 
     public void MissNoteSum()
     {
         missNoteSum += 1;
         missSum.text = "" + missNoteSum;
+    }
+
+    public void ScoreNoteSum()
+    {
+        scoreNoteSum += currentScore;
+        scoreSum.text = "" + scoreNoteSum;
+    }
+
+    public void MaxCombo()
+    {
+        maxCombo = perfectHitNoteSum + goodHitNoteSum;
+        maxComboText.text = "" + maxCombo;
+       
     }
 
 }

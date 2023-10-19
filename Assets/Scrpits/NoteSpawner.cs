@@ -12,6 +12,8 @@ public class NoteSpawner : MonoBehaviour
     public float beatPerNote = 1.0f;    // 한 노트당 박자 수 (1박자 2박자 4박자)
     public bool startPlaying = false;
     public float spawnOffset = 1.0f;
+    public int desiredNoteCount = 50;
+    public int totalNoteSpawned = 0;
     //public bool firstStart = false;
   
 
@@ -29,6 +31,7 @@ public class NoteSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (!startPlaying)
         {
             if (Input.anyKeyDown)
@@ -43,14 +46,14 @@ public class NoteSpawner : MonoBehaviour
             GameManager.instance.PauseGame();
         }
 
+
+
         //else if(!startPlaying && Input.GetKeyDown(KeyCode.S))
         //{
         //    GameManager.instance.ResumeGame();
         //}
 
 
-        else
-        {
             timer += Time.deltaTime;
 
             if (timer >= beatInterval)
@@ -60,28 +63,35 @@ public class NoteSpawner : MonoBehaviour
                 if (beatCount % beatPerNote == 0)
                 {
                     SpawnNote();
-                   
+
                 }
                 timer = 0;
             }
-        }
+        
+  
+        //else
+        //{
+
+        //}
 
     }
 
     void SpawnNote()
     {
+
         float randomXPosition = Random.Range(minXPosition, maxXPosition);
         Vector3 spawnPosition = new Vector3(randomXPosition, transform.position.y, transform.position.z);
 
         GameObject newNote = Instantiate(notePrefabs, spawnPosition, Quaternion.identity);
 
         float randomXposition2 = Random.Range(0, 3);
-        if(randomXposition2 % 2 == 0)
+        if (randomXposition2 % 2 == 0)
         {
-            Vector3 spawnPosition2 = spawnPosition + new Vector3(spawnOffset, 0, 0);                 
+            Vector3 spawnPosition2 = spawnPosition + new Vector3(spawnOffset, 0, 0);
             Instantiate(notePrefabs, spawnPosition2, Quaternion.identity);
         }
 
+        totalNoteSpawned++;
 
     }
 
