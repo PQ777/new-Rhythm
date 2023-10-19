@@ -7,6 +7,7 @@ using UnityEngine;
 public class SongButton : MonoBehaviour
 {
     public AudioSource songClick;
+    public AudioSource backMenu;
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +29,7 @@ public class SongButton : MonoBehaviour
 
     public void BackMain()
     {
-        GameManager.instance.MainBackMenu();
+        backMenu.Play();
+        SceneManager.LoadScene("MainMenu");
     }
 }

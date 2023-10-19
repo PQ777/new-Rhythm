@@ -6,7 +6,7 @@ public class Note : MonoBehaviour
 {
     public float speed = 2.0f;
     public bool canBePressed = false;
-    public KeyCode keyToPress;
+    public KeyCode keyToPress1, keyToPress2;
     public bool canBeMusicPlay = false;
     public GameObject perfectEffect, goodEffect, missEffect;
 
@@ -34,7 +34,7 @@ public class Note : MonoBehaviour
         }
             
 
-        if(Input.GetKeyDown(keyToPress))
+        if(Input.GetKeyDown(keyToPress1) || Input.GetKeyDown(keyToPress2))
         {
             if(canBePressed)
             {

@@ -99,7 +99,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 6
   canBePressed: 0
-  keyToPress: 122
+  keyToPress1: 122
+  keyToPress2: 47
   canBeMusicPlay: 0
   perfectEffect: {fileID: 6953310744701770600, guid: b59fe7ea1434af64e9821a7a38b8cd75, type: 3}
   goodEffect: {fileID: 5222012627492734881, guid: e8bd3f240c2f5544a9193ff29f9dbb8f, type: 3}

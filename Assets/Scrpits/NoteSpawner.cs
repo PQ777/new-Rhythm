@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
+using UnityEngine.UI;
 
 public class NoteSpawner : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class NoteSpawner : MonoBehaviour
     public int desiredNoteCount = 50;
     public int totalNoteSpawned = 0;
     //public bool firstStart = false;
+    public Text howToPlayText;
   
 
     private float beatInterval;         // 한 비트 간격
@@ -37,32 +39,12 @@ public class NoteSpawner : MonoBehaviour
             if (Input.anyKeyDown)
             {
                 startPlaying = true;
-               
+                howToPlayText.enabled = false;
             }
         }
-
-        if (startPlaying && Input.GetKeyDown(KeyCode.Escape))
+        else
         {
-            GameManager.instance.PauseGame();
-        }
-
-        else if (Input.GetKeyDown(KeyCode.R))
-        {
-            GameManager.instance.RestartGame();
-        }
-
-        else if (Input.GetKeyDown(KeyCode.Q))
-        {
-            GameManager.instance.SelectSongBack();
-        }
-
-        //else if(!startPlaying && Input.GetKeyDown(KeyCode.S))
-        //{
-        //    GameManager.instance.ResumeGame();
-        //}
-
-
-        timer += Time.deltaTime;
+            timer += Time.deltaTime;
 
             if (timer >= beatInterval)
             {
@@ -75,33 +57,57 @@ public class NoteSpawner : MonoBehaviour
                 }
                 timer = 0;
             }
-        
-  
-        //else
-        //{
-
-        //}
-
-    }
-
-    void SpawnNote()
-    {
-
-        float randomXPosition = Random.Range(minXPosition, maxXPosition);
-        Vector3 spawnPosition = new Vector3(randomXPosition, transform.position.y, transform.position.z);
-
-        GameObject newNote = Instantiate(notePrefabs, spawnPosition, Quaternion.identity);
-
-        float randomXposition2 = Random.Range(0, 3);
-        if (randomXposition2 % 2 == 0)
-        {
-            Vector3 spawnPosition2 = spawnPosition + new Vector3(spawnOffset, 0, 0);
-            Instantiate(notePrefabs, spawnPosition2, Quaternion.identity);
         }
 
-        totalNoteSpawned++;
+            if (startPlaying && Input.GetKeyDown(KeyCode.Escape))
+            {
+                GameManager.instance.PauseGame();
+            }
 
+            else if (Input.GetKeyDown(KeyCode.R))
+            {
+                GameManager.instance.RestartGame();
+            }
+
+            else if (Input.GetKeyDown(KeyCode.Q))
+            {
+                GameManager.instance.SelectSongBack();
+            }
+
+            //else if(!startPlaying && Input.GetKeyDown(KeyCode.S))
+            //{
+            //    GameManager.instance.ResumeGame();
+            //}
+
+
+
+
+
+            //else
+            //{
+
+            //}
+
+        }
+
+        void SpawnNote()
+        {
+
+            float randomXPosition = Random.Range(minXPosition, maxXPosition);
+            Vector3 spawnPosition = new Vector3(randomXPosition, transform.position.y, transform.position.z);
+
+            GameObject newNote = Instantiate(notePrefabs, spawnPosition, Quaternion.identity);
+
+            float randomXposition2 = Random.Range(0, 3);
+            if (randomXposition2 % 2 == 0)
+            {
+                Vector3 spawnPosition2 = spawnPosition + new Vector3(spawnOffset, 0, 0);
+                Instantiate(notePrefabs, spawnPosition2, Quaternion.identity);
+            }
+
+            totalNoteSpawned++;
+
+        }
     }
 
 
-}

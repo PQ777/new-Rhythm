@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     public GameObject pauseMenu;
     public NoteSpawner startNote;
+    public bool strPlaying = false;
     public AudioSource audioSource;
     public AudioSource hitAudioSource;
     public AudioSource missAudioSource;
@@ -48,10 +49,11 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!startNote)
+        if (!strPlaying)
         {
             if (Input.anyKeyDown)
             {
+                strPlaying = true;
                 startNote.startPlaying = true;
             }
         }
@@ -99,10 +101,7 @@ public class GameManager : MonoBehaviour
         audioSource.Play();
     }
 
-    public void MainBackMenu()
-    {
-        SceneManager.LoadScene("MainMenu");
-    }
+
 
     //public void NoteHit()
     //{
