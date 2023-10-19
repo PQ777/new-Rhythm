@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
+    public GameObject pauseMenu;
     public NoteSpawner startNote;
     public AudioSource audioSource;
     public AudioSource hitAudioSource;
@@ -62,6 +63,9 @@ public class GameManager : MonoBehaviour
         timeScaleBeforePause = Time.timeScale;
          Time.timeScale = 0;
         startNote.startPlaying = false;
+
+        pauseMenu.SetActive(true);
+
    
     }
 
@@ -73,14 +77,21 @@ public class GameManager : MonoBehaviour
     //    }
     //}
 
-    //public void ResumeGame()
-    //{
+    public void RestartGame()
+    {
 
-    //    Time.timeScale = timeScaleBeforePause;
-    //    startNote.startPlaying = true;
-    //    SceneManager.LoadScene("SampleScene");
+        Time.timeScale = timeScaleBeforePause;
+        startNote.startPlaying = true;
+        pauseMenu.SetActive(false);
+        SceneManager.LoadScene("SampleScene");
 
-    //}
+    }
+
+    public void SelectSongBack()
+    {
+        Time.timeScale = timeScaleBeforePause;
+        SceneManager.LoadScene("SongSelect");
+    }
 
     public void PlayMusic()
     {

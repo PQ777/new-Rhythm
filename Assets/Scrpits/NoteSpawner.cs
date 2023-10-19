@@ -41,12 +41,20 @@ public class NoteSpawner : MonoBehaviour
             }
         }
 
-        if (startPlaying && Input.GetKeyDown(KeyCode.Q))
+        if (startPlaying && Input.GetKeyDown(KeyCode.Escape))
         {
             GameManager.instance.PauseGame();
         }
 
+        else if (Input.GetKeyDown(KeyCode.R))
+        {
+            GameManager.instance.RestartGame();
+        }
 
+        else if (Input.GetKeyDown(KeyCode.Q))
+        {
+            GameManager.instance.SelectSongBack();
+        }
 
         //else if(!startPlaying && Input.GetKeyDown(KeyCode.S))
         //{
@@ -54,7 +62,7 @@ public class NoteSpawner : MonoBehaviour
         //}
 
 
-            timer += Time.deltaTime;
+        timer += Time.deltaTime;
 
             if (timer >= beatInterval)
             {
