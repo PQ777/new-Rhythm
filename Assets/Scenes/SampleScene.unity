@@ -1501,7 +1501,7 @@ MonoBehaviour:
   notePrefabs: {fileID: 3511104678964808638, guid: b6a8e604284ec554085af367b066cbdd, type: 3}
   minXPosition: -2.8
   maxXPosition: 2.3
-  BPM: 500
+  BPM: 300
   beatPerNote: 1
   startPlaying: 0
   spawnOffset: 1
