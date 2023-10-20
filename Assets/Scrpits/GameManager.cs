@@ -15,8 +15,8 @@ public class GameManager : MonoBehaviour
     public AudioSource missAudioSource;
     public float timeScaleBeforePause;
 
-
-
+   
+    public float delayMusic = 1.0f;
 
 
     public int currentScore;
@@ -46,7 +46,7 @@ public class GameManager : MonoBehaviour
     }
     void Start()
     {
-
+        
         //audioSource = GetComponent<AudioSource>();
         //hitAudioSource = GetComponent<AudioSource>();
         scoreText.text = "0";
@@ -59,11 +59,22 @@ public class GameManager : MonoBehaviour
         {
             if (Input.anyKeyDown)
             {
+
                 strPlaying = true;
                 startNote.startPlaying = true;
+
+                PlayMusicDelay();
+
             }
         }
 
+    }
+
+    void PlayMusicDelay()
+    {
+        double delayTime = AudioSettings.dspTime + delayMusic;
+        audioSource.PlayScheduled(delayTime);
+        //audioSource.Play();
     }
 
     public void PauseGame()
@@ -104,7 +115,7 @@ public class GameManager : MonoBehaviour
     public void PlayMusic()
     {
         //audioSource.playOnAwake = true;
-        audioSource.Play();
+        
     }
 
 

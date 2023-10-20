@@ -22,12 +22,15 @@ public class NoteSpawner : MonoBehaviour
     private float beatInterval;         // 한 비트 간격
     private float timer = 0;
     private int beatCount = 0;
+
+    private float songStartTime;
+    private int currentBeat = 4;
    
     // Start is called before the first frame update
     void Start()
     {
         beatInterval = 60f / BPM;
-
+        songStartTime = Time.time;
     }
 
     // Update is called once per frame
@@ -44,22 +47,47 @@ public class NoteSpawner : MonoBehaviour
         }
         else
         {
-            timer += Time.deltaTime;
+            float songPosition = Time.time - songStartTime;
 
-            if (timer >= beatInterval)
+            float noteSpawnTime = (currentBeat - 1) * beatInterval;
+
+            Debug.Log(noteSpawnTime);
+
+            if(songPosition > 93f)
             {
-                beatCount++;
+                GameManager.instance.PauseGame();
+            }
 
-                if (beatCount % beatPerNote == 0)
+            else if(songPosition >= noteSpawnTime)
+            {
+                SpawnNote();
+
+                float randomNotePosition = Random.Range(0, 4);
+                if(randomNotePosition % 3 == 0)
                 {
                     SpawnNote();
 
                 }
-                timer = 0;
+                
+                currentBeat++;
             }
+
+            //timer += Time.deltaTime;
+
+            //if (timer >= beatInterval)
+            //{
+            //    beatCount++;
+
+            //    if (beatCount % beatPerNote == 0)
+            //    {
+            //        SpawnNote();
+
+            //    }
+            //    timer = 0;
+            //}
         }
 
-            if (startPlaying && Input.GetKeyDown(KeyCode.Escape))
+        if (startPlaying && Input.GetKeyDown(KeyCode.Escape))
             {
                 GameManager.instance.PauseGame();
             }
@@ -83,10 +111,7 @@ public class NoteSpawner : MonoBehaviour
 
 
 
-            //else
-            //{
-
-            //}
+      
 
         }
 

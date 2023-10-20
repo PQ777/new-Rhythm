@@ -1501,7 +1501,7 @@ MonoBehaviour:
   notePrefabs: {fileID: 3511104678964808638, guid: b6a8e604284ec554085af367b066cbdd, type: 3}
   minXPosition: -2.8
   maxXPosition: 2.3
-  BPM: 300
+  BPM: 120
   beatPerNote: 1
   startPlaying: 0
   spawnOffset: 1
@@ -1533,7 +1533,7 @@ GameObject:
   - component: {fileID: 1251163172}
   - component: {fileID: 1251163171}
   m_Layer: 0
-  m_Name: Orange
+  m_Name: Music1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1549,9 +1549,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: c48e4b5f92407c146be7b1f858c9c5c0, type: 3}
+  m_audioClip: {fileID: 8300000, guid: cd28831adc49aa34ab897185aee240ee, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.159
+  m_Volume: 0.117
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -2532,6 +2532,7 @@ MonoBehaviour:
   hitAudioSource: {fileID: 100152602}
   missAudioSource: {fileID: 1873289725}
   timeScaleBeforePause: 0
+  delayMusic: 2
   currentScore: 0
   perfectHitNoteSum: 0
   goodHitNoteSum: 0
