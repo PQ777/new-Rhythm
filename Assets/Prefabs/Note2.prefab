@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9ebe2c0e8bd5d24a861c52047d280fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 6
+  basicSpeed: 6
   canBePressed: 0
   keyToPress1: 122
   keyToPress2: 47
@@ -105,6 +105,9 @@ MonoBehaviour:
   perfectEffect: {fileID: 6953310744701770600, guid: b59fe7ea1434af64e9821a7a38b8cd75, type: 3}
   goodEffect: {fileID: 5222012627492734881, guid: e8bd3f240c2f5544a9193ff29f9dbb8f, type: 3}
   missEffect: {fileID: 4198911700177759382, guid: e762a106d84a1a94b8287b5cb7d28748, type: 3}
+  lowSpeed: 0
+  middleSpeed: 0
+  highSpeed: 0
 --- !u!50 &6626213146117167741
 Rigidbody2D:
   serializedVersion: 4

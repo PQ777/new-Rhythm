@@ -17,6 +17,8 @@ public class GameManager : MonoBehaviour
 
 
 
+
+
     public int currentScore;
     public int perfectHitNoteSum = 0;
     public int goodHitNoteSum = 0;
@@ -44,10 +46,9 @@ public class GameManager : MonoBehaviour
     }
     void Start()
     {
-        
+
         //audioSource = GetComponent<AudioSource>();
         //hitAudioSource = GetComponent<AudioSource>();
-
         scoreText.text = "0";
     }
 
@@ -72,8 +73,7 @@ public class GameManager : MonoBehaviour
         startNote.startPlaying = false;
 
         pauseMenu.SetActive(true);
-
-   
+        
     }
 
     //public void resultPanel()
@@ -91,6 +91,7 @@ public class GameManager : MonoBehaviour
         startNote.startPlaying = true;
         pauseMenu.SetActive(false);
         SceneManager.LoadScene("SampleScene");
+
 
     }
 
@@ -180,5 +181,6 @@ public class GameManager : MonoBehaviour
         maxComboText.text = "" + maxCombo;
        
     }
+
 
 }

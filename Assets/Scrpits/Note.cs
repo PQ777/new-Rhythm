@@ -4,23 +4,25 @@ using UnityEngine;
 
 public class Note : MonoBehaviour
 {
-    public float speed = 2.0f;
+    public float basicSpeed = 6.0f;
     public bool canBePressed = false;
     public KeyCode keyToPress1, keyToPress2;
     public bool canBeMusicPlay = false;
     public GameObject perfectEffect, goodEffect, missEffect;
+    public KeyCode lowSpeed, middleSpeed, highSpeed;
 
 
     // Start is called before the first frame update
     void Start()
     {
-       
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector3.down * speed * Time.deltaTime);
+
+        transform.Translate(Vector3.down * basicSpeed  * Time.deltaTime);
 
         if(!canBePressed)
         {
