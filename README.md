@@ -80,6 +80,24 @@ Enable song selection button and back button (add animation)<br>
 
 
 
+메인메뉴 창 수정
+Modifying the Main Menu
+![1](https://github.com/PQ777/new-Rhythm/assets/102477933/cf35e023-a001-4a05-9b3e-1f3b09c2a31f)
 
 
-  
+곡 선택 창 수정
+Modifying Sond Selection
+![2](https://github.com/PQ777/new-Rhythm/assets/102477933/ffb5555e-5e3d-4abc-a313-f4ce539bc7d0)
+
+
+게임플레이 창 수정
+Modifying Game Play
+![3](https://github.com/PQ777/new-Rhythm/assets/102477933/a98bd17f-b7c4-4e01-9b25-7408d3bc3296)
+
+
+재시작 및 back 메뉴 키 활성화
+Restart and back menu key activation
+![1](https://github.com/PQ777/new-Rhythm/assets/102477933/f4a7b86c-33c5-4a54-9041-45236b7cff4d)
+
+
+
