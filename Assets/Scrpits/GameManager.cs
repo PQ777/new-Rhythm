@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     public float timeScaleBeforePause;
 
 
+
     public int currentScore;
     public int perfectHitNoteSum = 0;
     public int goodHitNoteSum = 0;
@@ -33,13 +34,17 @@ public class GameManager : MonoBehaviour
     public Text maxComboText;
 
     // Start is called before the first frame update
-    void Start()
+
+    void Awake()
     {
         if(instance == null)
         {
             instance = this;
         }
-
+    }
+    void Start()
+    {
+        
         //audioSource = GetComponent<AudioSource>();
         //hitAudioSource = GetComponent<AudioSource>();
 

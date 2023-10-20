@@ -27,6 +27,12 @@ public class SongButton : MonoBehaviour
         SceneManager.LoadScene("SampleScene");
     }
 
+    public void SongClick2()
+    {
+        songClick.Play();
+        SceneManager.LoadScene("SampleScene2");
+    }
+
     public void BackMain()
     {
         backMenu.Play();
