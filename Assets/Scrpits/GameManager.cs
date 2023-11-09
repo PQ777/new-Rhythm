@@ -209,7 +209,7 @@ public class GameManager : MonoBehaviour
     public void Fail()
     {
         timeScaleBeforePause = Time.timeScale;
-        Time.timeScale = 0;
+        //Time.timeScale = 0;
         startNote.startPlaying = false;
 
         failMenu.SetActive(true);
