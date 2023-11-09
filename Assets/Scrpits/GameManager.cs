@@ -14,6 +14,9 @@ public class GameManager : MonoBehaviour
     public AudioSource hitAudioSource;
     public AudioSource missAudioSource;
     public float timeScaleBeforePause;
+    public GameObject failMenu;
+
+    
 
    
     public float delayMusic = 1.0f;
@@ -26,6 +29,7 @@ public class GameManager : MonoBehaviour
     public int scoreNoteSum = 0;
     public int maxCombo = 0;
     public float totalNote = 50;
+    public int hpSum = 10;
 
     public int scorePerNote = 1;
     public Text scoreText;
@@ -34,6 +38,7 @@ public class GameManager : MonoBehaviour
     public Text missSum;
     public Text scoreSum;
     public Text maxComboText;
+    public Text hpText;
 
     // Start is called before the first frame update
 
@@ -50,6 +55,7 @@ public class GameManager : MonoBehaviour
         //audioSource = GetComponent<AudioSource>();
         //hitAudioSource = GetComponent<AudioSource>();
         scoreText.text = "0";
+        hpText.text = "10";
     }
 
     // Update is called once per frame
@@ -178,6 +184,13 @@ public class GameManager : MonoBehaviour
     {
         missNoteSum += 1;
         missSum.text = "" + missNoteSum;
+
+        hpSum -= 1;
+        hpText.text = "" + hpSum;
+        if(hpSum < 0)
+        {
+            Fail();
+        }
     }
 
     public void ScoreNoteSum()
@@ -193,5 +206,12 @@ public class GameManager : MonoBehaviour
        
     }
 
+    public void Fail()
+    {
+        timeScaleBeforePause = Time.timeScale;
+        Time.timeScale = 0;
+        startNote.startPlaying = false;
 
+        failMenu.SetActive(true);
+    }
 }
