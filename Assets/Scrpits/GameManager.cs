@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
     public float timeScaleBeforePause;
     public GameObject failMenu;
 
-    
+    public GameObject rankingPanel, canvas;
 
    
     public float delayMusic = 1.0f;
@@ -189,6 +189,8 @@ public class GameManager : MonoBehaviour
         hpText.text = "" + hpSum;
         if(hpSum < 0)
         {
+            rankingPanel.SetActive(false);
+            canvas.SetActive(false);
             Fail();
         }
     }
