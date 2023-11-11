@@ -39,6 +39,7 @@ public class GameManager : MonoBehaviour
     public Text scoreSum;
     public Text maxComboText;
     public Text hpText;
+    public GameObject gameOverText;
 
     // Start is called before the first frame update
 
@@ -189,9 +190,11 @@ public class GameManager : MonoBehaviour
         hpText.text = "" + hpSum;
         if(hpSum < 0)
         {
-            rankingPanel.SetActive(false);
-            canvas.SetActive(false);
-            Fail();
+            //rankingPanel.SetActive(false);
+            //canvas.SetActive(false);
+            //Fail();
+            PauseGame();
+            gameOverText.SetActive(true);
         }
     }
 
@@ -208,12 +211,12 @@ public class GameManager : MonoBehaviour
        
     }
 
-    public void Fail()
-    {
-        timeScaleBeforePause = Time.timeScale;
-        //Time.timeScale = 0;
-        startNote.startPlaying = false;
+    //public void Fail()
+    //{
+    //    timeScaleBeforePause = Time.timeScale;
+    //    Time.timeScale = 0;
+    //    startNote.startPlaying = false;
 
-        failMenu.SetActive(true);
-    }
+    //    failMenu.SetActive(true);
+    //}
 }

@@ -17,6 +17,7 @@ public class NoteSpawner : MonoBehaviour
     public int totalNoteSpawned = 0;
     //public bool firstStart = false;
     public Text howToPlayText;
+    public Text remainingTime;
   
 
     private float beatInterval;         // 한 비트 간격
@@ -31,6 +32,8 @@ public class NoteSpawner : MonoBehaviour
     {
         beatInterval = 60f / BPM;
         songStartTime = Time.time;
+        remainingTime.text = "0";
+
     }
 
     // Update is called once per frame
@@ -52,8 +55,9 @@ public class NoteSpawner : MonoBehaviour
             float noteSpawnTime = (currentBeat - 1) * beatInterval;
 
             Debug.Log(noteSpawnTime);
+            remainingTime.text = noteSpawnTime.ToString();
 
-            if(songPosition > 93f)
+            if (songPosition > 60f)
             {
                 GameManager.instance.PauseGame();
             }
